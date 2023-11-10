@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/genreFragment">
+    <fragment
+        android:id="@+id/genreFragment"
+        android:name="tia.sarwoedhi.moviesapp.feature.genre.GenreFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_genre">
+        <action
+            android:id="@+id/action_genreFragment_to_movieFragment"
+            app:destination="@id/movieFragment"
+            app:popUpToSaveState="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="tia.sarwoedhi.moviesapp.feature.movie.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie">
+
+        <argument
+            android:name="genre"
+            android:defaultValue="1"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_movieFragment_to_genreFragment"
+            app:destination="@id/genreFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/genreFragment"
+            app:popUpToSaveState="true" />
+
+        <action
+            android:id="@+id/action_movieFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment"
+            app:popUpTo="@id/movieFragment"
+            app:popUpToSaveState="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailMovieFragment"
+        android:name="tia.sarwoedhi.moviesapp.feature.detail_movie.DetailMovieFragment"
+        android:label="fragment_detail_movie"
+        app:popUpTo="@id/movieFragment"
+        app:popUpToInclusive="true"
+        tools:layout="@layout/fragment_detail_movie">
+
+        <action
+            android:id="@+id/action_detailMovieFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <argument
+            android:name="movieId"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
+
+
+</navigation>

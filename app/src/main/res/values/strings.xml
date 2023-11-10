@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Movies App</string>
+    <string name="genre_title">genre_title</string>
+    <string name="genre">List Genre</string>
+    <string name="movie_with_genre">List Movie by Genre %1$s</string>
+    <string name="list_contents">%1$s</string>
+    <style name="genre_title">Genre Title</style>
+    <string name="detail_title">%1$s</string>
+    <string name="detail_vote">%1$s/10</string>
+    <string name="detail_runtime">%1$s minutes</string>
+    <string name="detail_genre">%1$s</string>
+    <string name="list_year">(%1$s)</string>
+    <string name="img_poster_desc">This is poster of the movie or tv show</string>
+    <string name="image_is_not_available">Image is not available yet</string>
+    <string name="dash_for_null">-</string>
+    <string name="not_available_yet">Not available yet</string>
+    <string name="ic_star_desc">This is star icon</string>
+    <string name="btn_back_desc">This is back button</string>
+    <string name="review_is_not_available">Review is not available yet</string>
+    <string name="lbl_overview">Overview</string>
+    <string name="lbl_genre">Genre</string>
+    <string name="lbl_runtime">Runtime</string>
+    <string name="lbl_review">List Review</string>
+    <string name="retry">retry\n</string>
+</resources>

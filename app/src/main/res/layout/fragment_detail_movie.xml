@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:ignore="ContentDescription">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgPoster"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/img_poster_desc"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/shape_bg_btn_circle"
+            android:contentDescription="@string/btn_back_desc"
+            android:padding="2dp"
+            android:src="@drawable/ic_arrow_white_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/cornerShape"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_rounded_corner_40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="60dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/imgPoster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:maxImageSize="36dp"
+            tools:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPoster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgPoster" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:lineSpacingExtra="6dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:textAlignment="center"
+            android:textColor="@color/DarkFont"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:text="Jumanji: The Next Level" />
+
+        <TextView
+            android:id="@+id/txtYear"
+            style="@style/LabelStyle"
+            android:layout_marginTop="8dp"
+            android:text="@string/dash_for_null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+            tools:text="(2019)"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/icStar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/ic_star_desc"
+            android:src="@drawable/ic_star_gold_24dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/txtScore"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/txtScore"
+            style="@style/LabelStyle"
+            android:text="@string/dash_for_null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/icStar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="7.9/10"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:constraint_referenced_ids="icStar,txtScore"
+            app:flow_horizontalGap="4dp"
+            app:flow_maxElementsWrap="2"
+            app:flow_wrapMode="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtYear" />
+
+        <TextView
+            android:id="@+id/lblOverview"
+            style="@style/LabelStyle"
+            android:layout_marginTop="10dp"
+            android:text="@string/lbl_overview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flow_score"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/txtOverview"
+            style="@style/ListDescriptionStyle"
+            android:paddingHorizontal="16dp"
+            android:text="@string/not_available_yet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblOverview"
+            tools:text="World class mobile and desktop creative apps. Get Creative Cloud! Memberships for everyone. All creative apps more. Free memberships trials. Step-by-step tutorials. Free product updates. Free trial downloads. Sync, store and share. Special offers." />
+
+        <TextView
+            android:id="@+id/lblGenre"
+            style="@style/LabelStyle"
+            android:layout_marginTop="10dp"
+            android:text="@string/lbl_genre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtOverview"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/txtGenre"
+            style="@style/ListDescriptionStyle"
+            android:paddingHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/not_available_yet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblGenre"
+            tools:text="Wo." />
+
+
+        <TextView
+            android:id="@+id/lblImgNotAvailable"
+            style="@style/ErrorStyle"
+            android:layout_width="wrap_content"
+            android:text="@string/image_is_not_available"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/cornerShape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgPoster"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/labelReview"
+            style="@style/LabelStyle"
+            android:layout_marginTop="10dp"
+            android:text="@string/lbl_review"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtGenre"
+            tools:visibility="visible" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelReview"
+            tools:listitem="@layout/item_review" />
+
+        <TextView
+            android:id="@+id/informationReview"
+            style="@style/ListDescriptionStyle"
+            android:layout_marginTop="6dp"
+            android:text="@string/review_is_not_available"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelReview"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            style="@style/ErrorStyle"
+            android:layout_width="wrap_content"
+            android:text="@string/image_is_not_available"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtOverview"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
